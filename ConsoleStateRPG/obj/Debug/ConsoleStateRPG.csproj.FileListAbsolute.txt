@@ -1,0 +1,7 @@
+C:\Users\HP\source\repos\ConsoleStateRPG\ConsoleStateRPG\obj\Debug\ConsoleStateRPG.csproj.AssemblyReference.cache
+C:\Users\HP\source\repos\ConsoleStateRPG\ConsoleStateRPG\obj\Debug\ConsoleStateRPG.csproj.CoreCompileInputs.cache
+C:\Users\HP\source\repos\ConsoleStateRPG\ConsoleStateRPG\bin\Debug\ConsoleStateRPG.exe.config
+C:\Users\HP\source\repos\ConsoleStateRPG\ConsoleStateRPG\bin\Debug\ConsoleStateRPG.exe
+C:\Users\HP\source\repos\ConsoleStateRPG\ConsoleStateRPG\bin\Debug\ConsoleStateRPG.pdb
+C:\Users\HP\source\repos\ConsoleStateRPG\ConsoleStateRPG\obj\Debug\ConsoleStateRPG.exe
+C:\Users\HP\source\repos\ConsoleStateRPG\ConsoleStateRPG\obj\Debug\ConsoleStateRPG.pdb
