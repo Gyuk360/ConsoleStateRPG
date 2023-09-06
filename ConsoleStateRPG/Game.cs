@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace ConsoleStateRPG
 {
@@ -12,12 +13,20 @@ namespace ConsoleStateRPG
 	{
 		private bool end;
 		private Stack<State> states;
+		/* non è errato che si trovi qui dato che se cercassimo solo di passare il riferimento il garbage collector
+		cancellerebbe il personaggio al termine dello scope della funzione */
+		private ArrayList characterList;
 
 		// invoco i costruttori cosi che il codice al loro interno sia eseguito
 		private void InitStates()
 		{ 
 		    this.states = new Stack<State>();
-			this.states.Push(new StateMainMenu(this.states));
+			this.states.Push(new StateMainMenu(this.states , characterList));
+		}
+
+		private void InitCharacterList() 
+		{
+			this.characterList = new ArrayList();
 		}
 		private void InitVariables()
 		{ 
@@ -27,6 +36,7 @@ namespace ConsoleStateRPG
 		// Costruttore che invoca i metodi di inizializzazione
 	    public Game()
 		{
+			this.InitCharacterList();
 			this.InitVariables();
 			this.InitStates();
 		}

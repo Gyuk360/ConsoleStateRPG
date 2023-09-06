@@ -8,47 +8,80 @@ namespace ConsoleStateRPG
 {
 	class Character
 	{
-		//Caratteristiche di base
+		//Per il momento l'unica caratteristica che il giocatore può scegliere è il nome
 		private String name ="";
-		private int level =0;
-		private int attributePoints =3;
-		private int exp =0,expMax =100;
-	    //attributi
-		private int strenght =1;
-		private int vitality = 1;
-		private int dexterity = 1;
-		private int agility = 1;
-		private int intelligence = 1;
 		//statistiche sono inizzializzate a caso tanto l'algoritmo le ricalcolerà tutte
 		private int hp = 1,hpMax = 100;
 		private int damage = 1, damageMax = 10;
 		private int accuracy = 1;
 		private int defence = 1;
-		//inventario
-		private int gold = 100;
 		public Character(String name) 
 		{
 			this.name = name;
 			this.CalculateStats();
 		}
-
-		private void CalculateEXP()
-		{
-			this.expMax = this.level * 100;
-		}
 		private void CalculateStats()
 		{
-			this.hp = this.vitality * 10;
-			this.damage = this.strenght;
-			this.damageMax = this.strenght * 2;
-			this.accuracy = this.dexterity * 2;
-			this.defence = this.agility * 2;
+			Random rnd = new Random();
+			this.hpMax = 50 + rnd.Next(25,75);
+			this.resetHp(); // Fa iniziare il personnaggio con vita attuale pari a quella totale
+			this.damage = rnd.Next(3, 7);
+			this.damageMax = this.damage * 2; // Ci serve per il colpo critico
+			this.accuracy = rnd.Next(6, 10);
+			this.defence = rnd.Next(3, 7);
 		}
 
-		 
+		public int GetHp()
+		{
+			return hp;
+		}
+
+		public int GetHpMax()
+		{
+			return hpMax;
+		}
+
+		public int GetDamage()
+		{
+			return damage;
+		}
+
+		public int GetDamageMax()
+		{
+			return damageMax;
+		}
+
+		public int GetAccuracy()
+		{
+			return accuracy;
+		}
+
+		public int GetDefense()
+		{
+			return defence;
+		}
+
+		public void TakeDamageSetHp(int damageTaken) // Questo è l'unico SET perché ci serve per scalare la vita al personaggio
+		{ 
+			this.hp = this.hp - damageTaken;
+		}
+
+		public void resetHp() 
+		{
+			this.hp = this.hpMax;
+		}
+
+
 		public override string ToString() //per poter usare una nostra formattazione personalizzata
 		{
-			return this.name;
+			String str;
+			str = this.name + "\t HP: " + this.hpMax + "\t Forza: " + this.damage + "\t Precisione :" + this.accuracy + "\t Difesa :" + this.defence;
+			if (this.accuracy != 6)
+			{
+				return str;
+			}
+			else  //Un piccolo easter Egg non manca mai nei miei giochi ;-P
+				return "LoL, Good luck bro xD";
 		}
 	}
 }
