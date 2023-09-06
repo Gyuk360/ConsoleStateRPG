@@ -67,7 +67,7 @@ namespace ConsoleStateRPG
 			Gui.MenuOption(0, "Crea personaggio");
 			Gui.MenuOption(1, "Elimina personaggio");
 			Gui.MenuOption(-1, "Esci dalla sezione");
-			int input = Gui.GetInput("Inserire il numero corrispondete all'opzione da selezzionare");
+			int input = Gui.GetInput("Inserire il numero corrispondente all'opzione da selezionare");
 			this.ProcessInput(input);
 
 		}

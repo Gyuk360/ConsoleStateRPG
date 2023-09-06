@@ -49,7 +49,7 @@ namespace ConsoleStateRPG
 					int defenseCheck = character.GetDefense() + rnd.Next(1, 5);
 					if (defenseCheck <= 7)
 					{
-						Gui.Title("La tua difesa vacilla sei scoperto");
+						Gui.Title("La tua difesa vacilla, sei scoperto");
 					}
 					else
 					{
@@ -64,7 +64,7 @@ namespace ConsoleStateRPG
 					if (enemyChoice > 0 )
 					{
 						this.character.TakeDamageSetHp(enemyAttack);
-						Gui.Title("Ti ha colpito hai subito " + enemyAttack + " danni!");
+						Gui.Title("Ti ha colpito! hai subito " + enemyAttack + " danni!");
 					}
 					else
 					{
@@ -109,7 +109,7 @@ namespace ConsoleStateRPG
 			Gui.MenuTitle("Benvenuto");
 			Gui.MenuOption(0, "START!");
 			Gui.MenuOption(-1, "Esci dal gioco");
-			int input = Gui.GetInput("Inserire il numero corrispondete all'opzione da selezzionare");
+			int input = Gui.GetInput("Inserire il numero corrispondente all'opzione da selezionare");
 			this.ProcessInput(input);
 
 		}

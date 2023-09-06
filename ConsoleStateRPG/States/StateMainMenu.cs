@@ -51,7 +51,7 @@ namespace ConsoleStateRPG
 			Gui.MenuOption(1, "Crea personaggio");
 			Gui.MenuOption(2, "Scelta del personaggio");
 			Gui.MenuOption(-1, "Esci dal gioco");
-			int input = Gui.GetInput("Inserire il numero corrispondete a una delle opzioni");
+			int input = Gui.GetInput("Inserire il numero corrispondente a una delle opzioni");
 			this.ProcessInput(input);
 
 		}
@@ -85,7 +85,7 @@ namespace ConsoleStateRPG
 		{ // la partita non può iniziare finche il personaggio attivo è NULL
 			if (activecharacter == null)
 			{
-				Gui.Announcement("Devi scegliere un personaggio per poter inizziare la partita");
+				Gui.Announcement("Devi scegliere un personaggio per poter iniziare la partita");
 			}
 			else 
 			{
